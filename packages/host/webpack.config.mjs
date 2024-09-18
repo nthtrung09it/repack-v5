@@ -141,7 +141,7 @@ export default env => {
           use: {
             loader: 'builtin:swc-loader',
             options: {
-              env: { targets: { 'react-native': '0.74' } },
+              env: { targets: { 'react-native': '0.75' } },
               jsc: { externalHelpers: true },
             },
           },
@@ -174,18 +174,18 @@ export default env => {
             },
           },
         },
-        {
-          test: /\.svg$/,
-          use: [
-            {
-              loader: '@svgr/webpack',
-              options: {
-                native: true,
-                dimensions: false,
-              },
-            },
-          ],
-        },
+        // {
+        //   test: /\.svg$/,
+        //   use: [
+        //     {
+        //       loader: '@svgr/webpack',
+        //       options: {
+        //         native: true,
+        //         dimensions: false,
+        //       },
+        //     },
+        //   ],
+        // },
         // {
         //   test: /\.svg$/,
         //   use: [
