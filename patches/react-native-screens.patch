@@ -1,0 +1,13 @@
+diff --git a/RNScreens.podspec b/RNScreens.podspec
+index be7cc24a3347046faca4083e6a9bea9819b67988..14cd2e4a5ccc4973e143baaa92673acf09e8d7ab 100644
+--- a/RNScreens.podspec
++++ b/RNScreens.podspec
+@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
+     s.subspec "common" do |ss|
+       ss.source_files         = ["common/cpp/**/*.{cpp,h}", "cpp/**/*.{cpp,h}"]
+       ss.header_dir           = "rnscreens"
+-      ss.pod_target_xcconfig  = { "HEADER_SEARCH_PATHS" => "\"$(PODS_TARGET_SRCROOT)/common/cpp\"" }
++      ss.pod_target_xcconfig  = { "HEADER_SEARCH_PATHS" => "\"$(PODS_TARGET_SRCROOT)/common/cpp/react/renderer/components/\"" }
+     end
+   end
+ 

@@ -1,0 +1,20 @@
+{
+  "name": "repack-v5-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start:host": "pnpm --filter host start",
+    "start:catalog": "pnpm --filter catalog-server start",
+    "host": "pnpm --filter host",
+    "miniapp": "pnpm --filter miniapp",
+    "pods": "pnpm -r pods",
+    "pods:update": "pnpm -r pods:update",
+    "start": "concurrently --raw -P 'pnpm:start:*(!standalone) {1}'",
+    "mmetro": "concurrently --raw -P 'pnpm:mmetro:*(!standalone) {1}'",
+    "align-deps": "pnpm -r align-deps",
+    "check-deps": "pnpm -r check-deps"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

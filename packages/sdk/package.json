@@ -1,0 +1,14 @@
+{
+  "name": "kernel-sdk",
+  "version": "0.0.1",
+  "description": "Dependency management & utils",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "android",
+    "ios",
+    "lib",
+    "index.js",
+    "preset.js"
+  ]
+}
