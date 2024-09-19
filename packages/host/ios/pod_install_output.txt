@@ -1,8 +1,8 @@
   $ /Users/kernel/.nvm/versions/node/v20.16.0/bin/node -p require.resolve(     "react-native/scripts/react_native_pods.rb",     {paths: [process.argv[1]]},   ) /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios
   /Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native/scripts/react_native_pods.rb
-Found 2 modules for target `Elearning`
-link_native_modules! {:ios_packages=>[{:configurations=>[], :name=>"@react-native-async-storage/async-storage", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@react-native-async-storage/async-storage", :path=>"../../../node_modules/@react-native-async-storage/async-storage", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@react-native-async-storage/async-storage/RNCAsyncStorage.podspec", :script_phases=>[]}, {:configurations=>[], :name=>"@callstack/repack", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@callstack/repack", :path=>"../../../node_modules/@callstack/repack", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@callstack/repack/callstack-repack.podspec", :script_phases=>[]}], :ios_project_root_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios", :react_native_path=>"../../../node_modules/react-native"}
-Auto-linking React Native modules for target `Elearning`: RNCAsyncStorage and callstack-repack
+Found 5 modules for target `Elearning`
+link_native_modules! {:ios_packages=>[{:configurations=>[], :name=>"@react-native-async-storage/async-storage", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@react-native-async-storage/async-storage", :path=>"../../../node_modules/@react-native-async-storage/async-storage", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@react-native-async-storage/async-storage/RNCAsyncStorage.podspec", :script_phases=>[]}, {:configurations=>[], :name=>"react-native-fs", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native-fs", :path=>"../../../node_modules/react-native-fs", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native-fs/RNFS.podspec", :script_phases=>[]}, {:configurations=>[], :name=>"react-native-vector-icons", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native-vector-icons", :path=>"../../../node_modules/react-native-vector-icons", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native-vector-icons/RNVectorIcons.podspec", :script_phases=>[]}, {:configurations=>[], :name=>"realm", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/realm", :path=>"../../../node_modules/realm", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/realm/RealmJS.podspec", :script_phases=>[]}, {:configurations=>[], :name=>"@callstack/repack", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@callstack/repack", :path=>"../../../node_modules/@callstack/repack", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@callstack/repack/callstack-repack.podspec", :script_phases=>[]}], :ios_project_root_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios", :react_native_path=>"../../../node_modules/react-native"}
+Auto-linking React Native modules for target `Elearning`: RNCAsyncStorage, RNFS, RNVectorIcons, RealmJS, and callstack-repack
 Framework build type is static framework
 [Codegen] Adding script_phases to ReactCodegen.
   $ /bin/mkdir -p ./build/generated/ios
@@ -12,26 +12,32 @@ Framework build type is static framework
   [Codegen] Searching for codegen-enabled libraries in the app.
   [Codegen] The "codegenConfig" field is not defined in package.json. Assuming there is nothing to generate at the app level.
   [Codegen] Searching for codegen-enabled libraries in the project dependencies.
-  [Codegen] Found react-native
   [Codegen] Found @react-native-async-storage/async-storage
+  [Codegen] Found react-native
+  [Codegen] Found react-native-vector-icons
   [Codegen] Found @callstack/repack
   
   
   [Codegen] >>>>> Searching for codegen-enabled libraries in react-native.config.js
+  [Codegen] Processing rnasyncstorage
+  [Codegen] Searching for podspec in the project dependencies.
+  [Codegen] Supported Apple platforms: ios, macos, tvos, visionos for rnasyncstorage
   [Codegen] Processing FBReactNativeSpec
   [Codegen] Searching for podspec in the project dependencies.
   [Codegen] Processing rncore
   [Codegen] Searching for podspec in the project dependencies.
-  [Codegen] Processing rnasyncstorage
+  [Codegen] Processing RNVectorIconsSpec
   [Codegen] Searching for podspec in the project dependencies.
-  [Codegen] Supported Apple platforms: ios, macos, tvos, visionos for rnasyncstorage
+  [Codegen] Supported Apple platforms: ios, tvos, visionos for RNVectorIconsSpec
   [Codegen] Processing RNScriptManagerSpec
   [Codegen] Searching for podspec in the project dependencies.
   [Codegen] Supported Apple platforms: ios for RNScriptManagerSpec
+  [Codegen] Generating Native Code for rnasyncstorage - ios
+  [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
   [Codegen] Generating Native Code for FBReactNativeSpec - ios
   [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
   [Codegen - rncore] Skipping iOS code generation for rncore as it has been generated already.
-  [Codegen] Generating Native Code for rnasyncstorage - ios
+  [Codegen] Generating Native Code for RNVectorIconsSpec - ios
   [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
   [Codegen] Generating Native Code for RNScriptManagerSpec - ios
   [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
@@ -42,26 +48,32 @@ Framework build type is static framework
 [Codegen] Searching for codegen-enabled libraries in the app.
 [Codegen] The "codegenConfig" field is not defined in package.json. Assuming there is nothing to generate at the app level.
 [Codegen] Searching for codegen-enabled libraries in the project dependencies.
-[Codegen] Found react-native
 [Codegen] Found @react-native-async-storage/async-storage
+[Codegen] Found react-native
+[Codegen] Found react-native-vector-icons
 [Codegen] Found @callstack/repack
 
 
 [Codegen] >>>>> Searching for codegen-enabled libraries in react-native.config.js
+[Codegen] Processing rnasyncstorage
+[Codegen] Searching for podspec in the project dependencies.
+[Codegen] Supported Apple platforms: ios, macos, tvos, visionos for rnasyncstorage
 [Codegen] Processing FBReactNativeSpec
 [Codegen] Searching for podspec in the project dependencies.
 [Codegen] Processing rncore
 [Codegen] Searching for podspec in the project dependencies.
-[Codegen] Processing rnasyncstorage
+[Codegen] Processing RNVectorIconsSpec
 [Codegen] Searching for podspec in the project dependencies.
-[Codegen] Supported Apple platforms: ios, macos, tvos, visionos for rnasyncstorage
+[Codegen] Supported Apple platforms: ios, tvos, visionos for RNVectorIconsSpec
 [Codegen] Processing RNScriptManagerSpec
 [Codegen] Searching for podspec in the project dependencies.
 [Codegen] Supported Apple platforms: ios for RNScriptManagerSpec
+[Codegen] Generating Native Code for rnasyncstorage - ios
+[Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
 [Codegen] Generating Native Code for FBReactNativeSpec - ios
 [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
 [Codegen - rncore] Skipping iOS code generation for rncore as it has been generated already.
-[Codegen] Generating Native Code for rnasyncstorage - ios
+[Codegen] Generating Native Code for RNVectorIconsSpec - ios
 [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
 [Codegen] Generating Native Code for RNScriptManagerSpec - ios
 [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
@@ -77,6 +89,7 @@ Inspecting targets to integrate
   Using `ARCHS` setting to build architectures of target `Pods-Elearning-ElearningTests`: (``)
 
 Finding Podfile changes
+  A RealmJS
   - DoubleConversion
   - FBLazyVector
   - RCT-Folly
@@ -84,6 +97,8 @@ Finding Podfile changes
   - RCTRequired
   - RCTTypeSafety
   - RNCAsyncStorage
+  - RNFS
+  - RNVectorIcons
   - React
   - React-Core
   - React-CoreModules
@@ -148,6 +163,8 @@ Fetching external sources
 -> Fetching podspec for `RCTRequired` from `../../../node_modules/react-native/Libraries/Required`
 -> Fetching podspec for `RCTTypeSafety` from `../../../node_modules/react-native/Libraries/TypeSafety`
 -> Fetching podspec for `RNCAsyncStorage` from `../../../node_modules/@react-native-async-storage/async-storage`
+-> Fetching podspec for `RNFS` from `../../../node_modules/react-native-fs`
+-> Fetching podspec for `RNVectorIcons` from `../../../node_modules/react-native-vector-icons`
 -> Fetching podspec for `React` from `../../../node_modules/react-native/`
 -> Fetching podspec for `React-Core` from `../../../node_modules/react-native/`
 -> Fetching podspec for `React-CoreModules` from `../../../node_modules/react-native/React/CoreModules`
@@ -199,6 +216,7 @@ Fetching external sources
 -> Fetching podspec for `React-utils` from `../../../node_modules/react-native/ReactCommon/react/utils`
 -> Fetching podspec for `ReactCodegen` from `build/generated/ios`
 -> Fetching podspec for `ReactCommon` from `../../../node_modules/react-native/ReactCommon`
+-> Fetching podspec for `RealmJS` from `../../../node_modules/realm`
 -> Fetching podspec for `Yoga` from `../../../node_modules/react-native/ReactCommon/yoga`
 -> Fetching podspec for `callstack-repack` from `../../../node_modules/@callstack/repack`
 
@@ -216,15 +234,7 @@ Resolving dependencies of `Podfile`
   CDN: trunk Relative path: Specs/6/a/b/SwiftyRSA/1.7.0/SwiftyRSA.podspec.json exists! Returning local because checking is only performed in repo update
 
 Comparing resolved specification to the sandbox manifest
-  M RNCAsyncStorage
-  M React-RCTAppDelegate
-  M React-RCTFabric
-  M React-defaultsnativemodule
-  M React-domnativemodule
-  M React-featureflagsnativemodule
-  M React-idlecallbacksnativemodule
-  M React-microtasksnativemodule
-  M callstack-repack
+  A RealmJS
   - DoubleConversion
   - FBLazyVector
   - JWTDecode
@@ -232,6 +242,9 @@ Comparing resolved specification to the sandbox manifest
   - RCTDeprecation
   - RCTRequired
   - RCTTypeSafety
+  - RNCAsyncStorage
+  - RNFS
+  - RNVectorIcons
   - React
   - React-Core
   - React-CoreModules
@@ -243,7 +256,9 @@ Comparing resolved specification to the sandbox manifest
   - React-NativeModulesApple
   - React-RCTActionSheet
   - React-RCTAnimation
+  - React-RCTAppDelegate
   - React-RCTBlob
+  - React-RCTFabric
   - React-RCTImage
   - React-RCTLinking
   - React-RCTNetwork
@@ -256,15 +271,20 @@ Comparing resolved specification to the sandbox manifest
   - React-callinvoker
   - React-cxxreact
   - React-debug
+  - React-defaultsnativemodule
+  - React-domnativemodule
   - React-featureflags
+  - React-featureflagsnativemodule
   - React-graphics
   - React-hermes
+  - React-idlecallbacksnativemodule
   - React-jserrorhandler
   - React-jsi
   - React-jsiexecutor
   - React-jsinspector
   - React-jsitracing
   - React-logger
+  - React-microtasksnativemodule
   - React-nativeconfig
   - React-perflogger
   - React-performancetimeline
@@ -280,6 +300,7 @@ Comparing resolved specification to the sandbox manifest
   - SwiftyRSA
   - Yoga
   - boost
+  - callstack-repack
   - fmt
   - glog
   - hermes-engine
@@ -300,7 +321,11 @@ Downloading dependencies
 
 -> Using RCTTypeSafety (0.75.3)
 
--> Installing RNCAsyncStorage 2.0.0
+-> Using RNCAsyncStorage (2.0.0)
+
+-> Using RNFS (2.20.0)
+
+-> Using RNVectorIcons (10.2.0)
 
 -> Using React (0.75.3)
 
@@ -324,11 +349,11 @@ Downloading dependencies
 
 -> Using React-RCTAnimation (0.75.3)
 
--> Installing React-RCTAppDelegate 0.75.3
+-> Using React-RCTAppDelegate (0.75.3)
 
 -> Using React-RCTBlob (0.75.3)
 
--> Installing React-RCTFabric 0.75.3
+-> Using React-RCTFabric (0.75.3)
 
 -> Using React-RCTImage (0.75.3)
 
@@ -354,19 +379,19 @@ Downloading dependencies
 
 -> Using React-debug (0.75.3)
 
--> Installing React-defaultsnativemodule 0.75.3
+-> Using React-defaultsnativemodule (0.75.3)
 
--> Installing React-domnativemodule 0.75.3
+-> Using React-domnativemodule (0.75.3)
 
 -> Using React-featureflags (0.75.3)
 
--> Installing React-featureflagsnativemodule 0.75.3
+-> Using React-featureflagsnativemodule (0.75.3)
 
 -> Using React-graphics (0.75.3)
 
 -> Using React-hermes (0.75.3)
 
--> Installing React-idlecallbacksnativemodule 0.75.3
+-> Using React-idlecallbacksnativemodule (0.75.3)
 
 -> Using React-jserrorhandler (0.75.3)
 
@@ -380,7 +405,7 @@ Downloading dependencies
 
 -> Using React-logger (0.75.3)
 
--> Installing React-microtasksnativemodule 0.75.3
+-> Using React-microtasksnativemodule (0.75.3)
 
 -> Using React-nativeconfig (0.75.3)
 
@@ -404,6 +429,8 @@ Downloading dependencies
 
 -> Using ReactCommon (0.75.3)
 
+-> Installing RealmJS (20.0.0)
+
 -> Using SocketRocket (0.7.0)
 
 -> Using SwiftyRSA (1.7.0)
@@ -412,7 +439,7 @@ Downloading dependencies
 
 -> Using boost (1.84.0)
 
--> Installing callstack-repack 5.0.0-alpha.0
+-> Using callstack-repack (5.0.0-alpha.0)
 
 -> Using fmt (9.1.0)
 
@@ -466,6 +493,16 @@ Generating Pods project
       - Generating umbrella header at `Pods/Target Support Files/RNCAsyncStorage/RNCAsyncStorage-umbrella.h`
       - Generating Info.plist file at `Pods/Target Support Files/RNCAsyncStorage/RNCAsyncStorage-Info.plist`
       - Generating dummy source at `Pods/Target Support Files/RNCAsyncStorage/RNCAsyncStorage-dummy.m`
+    - Installing target `RNFS` iOS 8.0
+      - Generating module map file at `Pods/Target Support Files/RNFS/RNFS.modulemap`
+      - Generating umbrella header at `Pods/Target Support Files/RNFS/RNFS-umbrella.h`
+      - Generating Info.plist file at `Pods/Target Support Files/RNFS/RNFS-Info.plist`
+      - Generating dummy source at `Pods/Target Support Files/RNFS/RNFS-dummy.m`
+    - Installing target `RNVectorIcons` iOS 12.0
+      - Generating module map file at `Pods/Target Support Files/RNVectorIcons/RNVectorIcons.modulemap`
+      - Generating umbrella header at `Pods/Target Support Files/RNVectorIcons/RNVectorIcons-umbrella.h`
+      - Generating Info.plist file at `Pods/Target Support Files/RNVectorIcons/RNVectorIcons-Info.plist`
+      - Generating dummy source at `Pods/Target Support Files/RNVectorIcons/RNVectorIcons-dummy.m`
     - Installing target `React` iOS 13.4
     - Installing target `React-Core` iOS 13.4
       - Generating Info.plist file at `Pods/Target Support Files/React-Core/ResourceBundle-React-Core_privacy-React-Core-Info.plist`
@@ -699,6 +736,12 @@ Generating Pods project
       - Generating umbrella header at `Pods/Target Support Files/ReactCommon/ReactCommon-umbrella.h`
       - Generating Info.plist file at `Pods/Target Support Files/ReactCommon/ReactCommon-Info.plist`
       - Generating dummy source at `Pods/Target Support Files/ReactCommon/ReactCommon-dummy.m`
+    - Installing target `RealmJS` iOS 9.0
+      - Generating Info.plist file at `Pods/Target Support Files/RealmJS/ResourceBundle-RealmJS-RealmJS-Info.plist`
+      - Generating module map file at `Pods/Target Support Files/RealmJS/RealmJS.modulemap`
+      - Generating umbrella header at `Pods/Target Support Files/RealmJS/RealmJS-umbrella.h`
+      - Generating Info.plist file at `Pods/Target Support Files/RealmJS/RealmJS-Info.plist`
+      - Generating dummy source at `Pods/Target Support Files/RealmJS/RealmJS-dummy.m`
     - Installing target `SocketRocket` iOS 11.0
       - Generating module map file at `Pods/Target Support Files/SocketRocket/SocketRocket.modulemap`
       - Generating umbrella header at `Pods/Target Support Files/SocketRocket/SocketRocket-umbrella.h`
@@ -755,6 +798,9 @@ Integrating target `React-FabricComponents`
 Integrating target `ReactCodegen`
     Adding Build Phase '[CP-User] Generate Specs' to project.
 
+Integrating target `RealmJS`
+    Adding Build Phase '[CP] Copy XCFrameworks' to project.
+
 Integrating target `hermes-engine`
     Adding Build Phase '[CP] Copy XCFrameworks' to project.
     Adding Build Phase '[CP-User] [Hermes] Replace Hermes for the right configuration, if needed' to project.
@@ -769,7 +815,7 @@ Setting SWIFT_ACTIVE_COMPILATION_CONDITIONS build settings
 [Privacy Manifest Aggregation] Appending aggregated reasons to existing PrivacyInfo.xcprivacy file.
 [Privacy Manifest Aggregation] Reading .xcprivacy files to aggregate all used Required Reason APIs.
 Setting CLANG_CXX_LANGUAGE_STANDARD to c++20 on /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/Elearning.xcodeproj
-Pod install took 5 [s] to run
+Pod install took 7 [s] to run
     - Podfile
   - Writing Xcode project file to `Pods/Pods.xcodeproj`
   Cleaning up sandbox directory
@@ -784,4 +830,4 @@ Integrating target `Pods-Elearning-ElearningTests` (`Elearning.xcodeproj` projec
   - Writing Manifest in `Pods/Manifest.lock`
   CDN: trunk Relative path: CocoaPods-version.yml exists! Returning local because checking is only performed in repo update
 
--> Pod installation complete! There are 66 dependencies from the Podfile and 67 total pods installed.
+-> Pod installation complete! There are 69 dependencies from the Podfile and 70 total pods installed.

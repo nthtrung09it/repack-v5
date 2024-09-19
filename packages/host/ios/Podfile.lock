@@ -1521,7 +1521,32 @@ PODS:
     - React-logger (= 0.75.3)
     - React-perflogger (= 0.75.3)
     - React-utils (= 0.75.3)
+  - RealmJS (20.0.0):
+    - React
   - RNCAsyncStorage (2.0.0):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
+  - RNFS (2.20.0):
+    - React-Core
+  - RNVectorIcons (10.2.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1613,7 +1638,10 @@ DEPENDENCIES:
   - React-utils (from `../../../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCodegen (from `build/generated/ios`)
   - ReactCommon/turbomodule/core (from `../../../node_modules/react-native/ReactCommon`)
+  - RealmJS (from `../../../node_modules/realm`)
   - "RNCAsyncStorage (from `../../../node_modules/@react-native-async-storage/async-storage`)"
+  - RNFS (from `../../../node_modules/react-native-fs`)
+  - RNVectorIcons (from `../../../node_modules/react-native-vector-icons`)
   - Yoga (from `../../../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -1748,8 +1776,14 @@ EXTERNAL SOURCES:
     :path: build/generated/ios
   ReactCommon:
     :path: "../../../node_modules/react-native/ReactCommon"
+  RealmJS:
+    :path: "../../../node_modules/realm"
   RNCAsyncStorage:
     :path: "../../../node_modules/@react-native-async-storage/async-storage"
+  RNFS:
+    :path: "../../../node_modules/react-native-fs"
+  RNVectorIcons:
+    :path: "../../../node_modules/react-native-vector-icons"
   Yoga:
     :path: "../../../node_modules/react-native/ReactCommon/yoga"
 
@@ -1817,7 +1851,10 @@ SPEC CHECKSUMS:
   React-utils: 211020f1a54caa72455ccf55853b064e590f564b
   ReactCodegen: c553d76baaa1d2ded9f5145a3e5cdd4b3467798b
   ReactCommon: d5e70af52fb05bd546fd7f002c549f57116c59e4
+  RealmJS: 6946b520bada5568b7e92a5242e138d3a19aa69f
   RNCAsyncStorage: 5601d6c658f0bf0a3714ea53e2b42ad25ac550ea
+  RNFS: 4ac0f0ea233904cb798630b3c077808c06931688
+  RNVectorIcons: 8c7af262a73890caabbac2bb081ddbaa1b8a768c
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
   SwiftyRSA: 8c6dd1ea7db1b8dc4fb517a202f88bb1354bc2c6
   Yoga: 33604ac44957ebe3f30f15b4cd0a3f96634e624a

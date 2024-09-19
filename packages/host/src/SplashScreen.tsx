@@ -1,8 +1,10 @@
 import React from 'react';
 import {Text} from 'react-native';
 import {StyleSheet, SafeAreaView} from 'react-native';
+import RNFS from 'react-native-fs';
 
 const SplashScreen = () => {
+  const path = `${RNFS.DocumentDirectoryPath}`;
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.text}>
