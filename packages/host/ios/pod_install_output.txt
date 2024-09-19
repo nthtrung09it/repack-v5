@@ -207,7 +207,7 @@ Resolving dependencies of `Podfile`
   CDN: trunk Relative path: all_pods_versions_a_9_3.txt exists! Returning local because checking is only performed in repo update
   CDN: trunk Relative path: Specs/a/9/3/SocketRocket/0.7.1/SocketRocket.podspec.json exists! Returning local because checking is only performed in repo update
   CDN: trunk Relative path: all_pods_versions_7_3_e.txt exists! Returning local because checking is only performed in repo update
-  CDN: trunk Relative path: Specs/7/3/e/JWTDecode/3.2.0-beta.0/JWTDecode.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/7/3/e/JWTDecode/3.2.0/JWTDecode.podspec.json exists! Returning local because checking is only performed in repo update
   CDN: trunk Relative path: all_pods_versions_6_a_b.txt exists! Returning local because checking is only performed in repo update
   CDN: trunk Relative path: Specs/6/a/b/SwiftyRSA/1.7.0/SwiftyRSA.podspec.json exists! Returning local because checking is only performed in repo update
   CDN: trunk Relative path: Specs/7/3/e/JWTDecode/3.0.1/JWTDecode.podspec.json exists! Returning local because checking is only performed in repo update
@@ -216,6 +216,15 @@ Resolving dependencies of `Podfile`
   CDN: trunk Relative path: Specs/6/a/b/SwiftyRSA/1.7.0/SwiftyRSA.podspec.json exists! Returning local because checking is only performed in repo update
 
 Comparing resolved specification to the sandbox manifest
+  M RNCAsyncStorage
+  M React-RCTAppDelegate
+  M React-RCTFabric
+  M React-defaultsnativemodule
+  M React-domnativemodule
+  M React-featureflagsnativemodule
+  M React-idlecallbacksnativemodule
+  M React-microtasksnativemodule
+  M callstack-repack
   - DoubleConversion
   - FBLazyVector
   - JWTDecode
@@ -223,7 +232,6 @@ Comparing resolved specification to the sandbox manifest
   - RCTDeprecation
   - RCTRequired
   - RCTTypeSafety
-  - RNCAsyncStorage
   - React
   - React-Core
   - React-CoreModules
@@ -235,9 +243,7 @@ Comparing resolved specification to the sandbox manifest
   - React-NativeModulesApple
   - React-RCTActionSheet
   - React-RCTAnimation
-  - React-RCTAppDelegate
   - React-RCTBlob
-  - React-RCTFabric
   - React-RCTImage
   - React-RCTLinking
   - React-RCTNetwork
@@ -250,20 +256,15 @@ Comparing resolved specification to the sandbox manifest
   - React-callinvoker
   - React-cxxreact
   - React-debug
-  - React-defaultsnativemodule
-  - React-domnativemodule
   - React-featureflags
-  - React-featureflagsnativemodule
   - React-graphics
   - React-hermes
-  - React-idlecallbacksnativemodule
   - React-jserrorhandler
   - React-jsi
   - React-jsiexecutor
   - React-jsinspector
   - React-jsitracing
   - React-logger
-  - React-microtasksnativemodule
   - React-nativeconfig
   - React-perflogger
   - React-performancetimeline
@@ -279,7 +280,6 @@ Comparing resolved specification to the sandbox manifest
   - SwiftyRSA
   - Yoga
   - boost
-  - callstack-repack
   - fmt
   - glog
   - hermes-engine
@@ -300,7 +300,7 @@ Downloading dependencies
 
 -> Using RCTTypeSafety (0.75.3)
 
--> Using RNCAsyncStorage (2.0.0)
+-> Installing RNCAsyncStorage 2.0.0
 
 -> Using React (0.75.3)
 
@@ -324,11 +324,11 @@ Downloading dependencies
 
 -> Using React-RCTAnimation (0.75.3)
 
--> Using React-RCTAppDelegate (0.75.3)
+-> Installing React-RCTAppDelegate 0.75.3
 
 -> Using React-RCTBlob (0.75.3)
 
--> Using React-RCTFabric (0.75.3)
+-> Installing React-RCTFabric 0.75.3
 
 -> Using React-RCTImage (0.75.3)
 
@@ -354,19 +354,19 @@ Downloading dependencies
 
 -> Using React-debug (0.75.3)
 
--> Using React-defaultsnativemodule (0.75.3)
+-> Installing React-defaultsnativemodule 0.75.3
 
--> Using React-domnativemodule (0.75.3)
+-> Installing React-domnativemodule 0.75.3
 
 -> Using React-featureflags (0.75.3)
 
--> Using React-featureflagsnativemodule (0.75.3)
+-> Installing React-featureflagsnativemodule 0.75.3
 
 -> Using React-graphics (0.75.3)
 
 -> Using React-hermes (0.75.3)
 
--> Using React-idlecallbacksnativemodule (0.75.3)
+-> Installing React-idlecallbacksnativemodule 0.75.3
 
 -> Using React-jserrorhandler (0.75.3)
 
@@ -380,7 +380,7 @@ Downloading dependencies
 
 -> Using React-logger (0.75.3)
 
--> Using React-microtasksnativemodule (0.75.3)
+-> Installing React-microtasksnativemodule 0.75.3
 
 -> Using React-nativeconfig (0.75.3)
 
@@ -412,7 +412,7 @@ Downloading dependencies
 
 -> Using boost (1.84.0)
 
--> Using callstack-repack (5.0.0-alpha.0)
+-> Installing callstack-repack 5.0.0-alpha.0
 
 -> Using fmt (9.1.0)
 
@@ -769,7 +769,7 @@ Setting SWIFT_ACTIVE_COMPILATION_CONDITIONS build settings
 [Privacy Manifest Aggregation] Appending aggregated reasons to existing PrivacyInfo.xcprivacy file.
 [Privacy Manifest Aggregation] Reading .xcprivacy files to aggregate all used Required Reason APIs.
 Setting CLANG_CXX_LANGUAGE_STANDARD to c++20 on /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/Elearning.xcodeproj
-Pod install took 7 [s] to run
+Pod install took 5 [s] to run
     - Podfile
   - Writing Xcode project file to `Pods/Pods.xcodeproj`
   Cleaning up sandbox directory

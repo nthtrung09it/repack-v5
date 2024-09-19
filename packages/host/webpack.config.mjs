@@ -45,7 +45,7 @@ export default env => {
    * to `development` or `production`. Otherwise your production code might be compiled with
    * in development mode by Babel.
    */
-  process.env.BABEL_ENV = mode;
+  // process.env.BABEL_ENV = mode;
 
   return {
     mode,
@@ -76,9 +76,7 @@ export default env => {
        */
       alias: {
         'react-native': reactNativePath,
-      }, 
-      conditionNames: [],
-      exportsFields: [],
+      }
     },
 
     /**
@@ -122,6 +120,10 @@ export default env => {
     //   ],
     //   chunkIds: 'named',
     // },
+    optimization: {
+      minimize,
+      chunkIds: 'named',
+    },
     module: {
       /**
        * This rule will process all React Native related dependencies with Babel.
@@ -146,12 +148,7 @@ export default env => {
             },
           },
         },
-        /**
-         * Here you can adjust loader that will process your files.
-         *
-         * You can also enable persistent caching with `cacheDirectory` - please refer to:
-         * https://github.com/babel/babel-loader#options
-         */
+        /* codebase rules */
         {
           test: /\.[jt]sx?$/,
           type: 'javascript/auto',
@@ -159,7 +156,7 @@ export default env => {
           use: {
             loader: 'builtin:swc-loader',
             options: {
-              /** Add React Refresh transform only when HMR is enabled. */
+              /** @type {import('@rspack/core').SwcLoaderOptions} */
               sourceMaps: true,
               env: {
                 targets: { 'react-native': '0.75' },
@@ -175,49 +172,14 @@ export default env => {
             },
           },
         },
-        // {
-        //   test: /\.svg$/,
-        //   use: [
-        //     {
-        //       loader: '@svgr/webpack',
-        //       options: {
-        //         native: true,
-        //         dimensions: false,
-        //       },
-        //     },
-        //   ],
-        // },
-        // {
-        //   test: /\.svg$/,
-        //   use: [
-        //     {
-        //       loader: 'react-native-svg-loader',
-        //     },
-        //   ]
-        // },
-        /**
-         * This loader handles all static assets (images, video, audio and others), so that you can
-         * use (reference) them inside your application.
-         *
-         * If you wan to handle specific asset type manually, filter out the extension
-         * from `ASSET_EXTENSIONS`, for example:
-         * ```
-         * Repack.ASSET_EXTENSIONS.filter((ext) => ext !== 'svg')
-         * ```
-         */
+        Repack.REACT_NATIVE_CODEGEN_RULES,
         {
-          test: Repack.getAssetExtensionsRegExp(Repack.ASSET_EXTENSIONS.filter((ext) => ext !== 'svg')),
+          test: Repack.getAssetExtensionsRegExp(Repack.ASSET_EXTENSIONS),
           use: {
             loader: '@callstack/repack/assets-loader',
             options: {
               platform,
               devServerEnabled: Boolean(devServer),
-              /**
-               * Defines which assets are scalable - which assets can have
-               * scale suffixes: `@1x`, `@2x` and so on.
-               * By default all images are scalable.
-               */
-              // scalableAssetExtensions: Repack.SCALABLE_ASSETS,
             },
           },
         },
@@ -225,15 +187,6 @@ export default env => {
     },
     plugins: [
       new rspack.IgnorePlugin({ resourceRegExp: /@react-native-masked-view/ }),
-      /**
-       * Configure other required and additional plugins to make the bundle
-       * work in React Native and provide good development experience with
-       * sensible defaults.
-       *
-       * `Repack.RepackPlugin` provides some degree of customization, but if you
-       * need more control, you can replace `Repack.RepackPlugin` with plugins
-       * from `Repack.plugins`.
-       */
       new Repack.RepackPlugin({
         context,
         mode,
