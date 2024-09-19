@@ -1,6 +1,6 @@
 import {Federated} from '@callstack/repack/client';
-import React from 'react';
-import {Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {Text, View, Button} from 'react-native';
 import SplashScreen from './SplashScreen';
 
 const MiniAppScreen = React.lazy(() =>
@@ -8,7 +8,13 @@ const MiniAppScreen = React.lazy(() =>
 );
 
 export const AppSuperSimple: React.FC = () => {
+  const [showMiniApp, setShowMiniApp] = useState(false);
+
   console.log('*** render splash simple');
+
+  const handleShowMiniApp = () => {
+    setShowMiniApp(true);
+  };
 
   return (
     <View
@@ -18,12 +24,16 @@ export const AppSuperSimple: React.FC = () => {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-      <Text>This is my SplashSimple 2</Text>
-      <View style={{width: 300, height: 250}}>
-        <React.Suspense fallback={<SplashScreen />}>
-          <MiniAppScreen />
-        </React.Suspense>
-      </View>
+      <Text>This is my SplashSimple</Text>
+      {!showMiniApp ? (
+        <Button title="Show Mini App" onPress={handleShowMiniApp} />
+      ) : (
+        <View style={{width: 300, height: 250}}>
+          <React.Suspense fallback={<SplashScreen />}>
+            <MiniAppScreen />
+          </React.Suspense>
+        </View>
+      )}
     </View>
   );
 };

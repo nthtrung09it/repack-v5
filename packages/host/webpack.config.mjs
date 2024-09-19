@@ -153,6 +153,7 @@ export default env => {
          * https://github.com/babel/babel-loader#options
          */
         {
+          test: /\.[jt]sx?$/,
           type: 'javascript/auto',
           exclude: [/node_modules/, /repack[/\\]dist/],
           use: {

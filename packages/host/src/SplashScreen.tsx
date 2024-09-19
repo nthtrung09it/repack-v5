@@ -1,7 +1,6 @@
 import React from 'react';
 import {Text} from 'react-native';
 import {StyleSheet, SafeAreaView} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const SplashScreen = () => {
   return (

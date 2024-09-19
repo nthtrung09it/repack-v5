@@ -1,14 +1,14 @@
-  $ /Users/kernel/.nvm/versions/node/v20.16.0/bin/node -p require.resolve(     "react-native/scripts/react_native_pods.rb",     {paths: [process.argv[1]]},   ) /Users/kernel/Documents/RepackBareRepo/packages/host/ios
-  /Users/kernel/Documents/RepackBareRepo/node_modules/react-native/scripts/react_native_pods.rb
+  $ /Users/kernel/.nvm/versions/node/v20.16.0/bin/node -p require.resolve(     "react-native/scripts/react_native_pods.rb",     {paths: [process.argv[1]]},   ) /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios
+  /Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native/scripts/react_native_pods.rb
 Found 2 modules for target `Elearning`
-link_native_modules! {:ios_packages=>[{:configurations=>[], :name=>"@react-native-async-storage/async-storage", :root=>"/Users/kernel/Documents/RepackBareRepo/node_modules/@react-native-async-storage/async-storage", :path=>"../../../node_modules/@react-native-async-storage/async-storage", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo/node_modules/@react-native-async-storage/async-storage/RNCAsyncStorage.podspec", :script_phases=>[]}, {:configurations=>[], :name=>"@callstack/repack", :root=>"/Users/kernel/Documents/RepackBareRepo/node_modules/@callstack/repack", :path=>"../../../node_modules/@callstack/repack", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo/node_modules/@callstack/repack/callstack-repack.podspec", :script_phases=>[]}], :ios_project_root_path=>"/Users/kernel/Documents/RepackBareRepo/packages/host/ios", :react_native_path=>"../../../node_modules/react-native"}
+link_native_modules! {:ios_packages=>[{:configurations=>[], :name=>"@react-native-async-storage/async-storage", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@react-native-async-storage/async-storage", :path=>"../../../node_modules/@react-native-async-storage/async-storage", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@react-native-async-storage/async-storage/RNCAsyncStorage.podspec", :script_phases=>[]}, {:configurations=>[], :name=>"@callstack/repack", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@callstack/repack", :path=>"../../../node_modules/@callstack/repack", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@callstack/repack/callstack-repack.podspec", :script_phases=>[]}], :ios_project_root_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios", :react_native_path=>"../../../node_modules/react-native"}
 Auto-linking React Native modules for target `Elearning`: RNCAsyncStorage and callstack-repack
 Framework build type is static framework
 [Codegen] Adding script_phases to ReactCodegen.
   $ /bin/mkdir -p ./build/generated/ios
 [Codegen] Generating ./build/generated/ios/ReactCodegen.podspec.json
-  $ /Users/kernel/.nvm/versions/node/v20.16.0/bin/node ./../../../node_modules/react-native/scripts/generate-codegen-artifacts.js -p /Users/kernel/Documents/RepackBareRepo/packages/host/ios/.. -o /Users/kernel/Documents/RepackBareRepo/packages/host/ios -t ios
-  [Codegen] Analyzing /Users/kernel/Documents/RepackBareRepo/packages/host/package.json
+  $ /Users/kernel/.nvm/versions/node/v20.16.0/bin/node ./../../../node_modules/react-native/scripts/generate-codegen-artifacts.js -p /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/.. -o /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios -t ios
+  [Codegen] Analyzing /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/package.json
   [Codegen] Searching for codegen-enabled libraries in the app.
   [Codegen] The "codegenConfig" field is not defined in package.json. Assuming there is nothing to generate at the app level.
   [Codegen] Searching for codegen-enabled libraries in the project dependencies.
@@ -29,16 +29,16 @@ Framework build type is static framework
   [Codegen] Searching for podspec in the project dependencies.
   [Codegen] Supported Apple platforms: ios for RNScriptManagerSpec
   [Codegen] Generating Native Code for FBReactNativeSpec - ios
-  [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo/packages/host/ios/build/generated/ios
+  [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
   [Codegen - rncore] Skipping iOS code generation for rncore as it has been generated already.
   [Codegen] Generating Native Code for rnasyncstorage - ios
-  [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo/packages/host/ios/build/generated/ios
+  [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
   [Codegen] Generating Native Code for RNScriptManagerSpec - ios
-  [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo/packages/host/ios/build/generated/ios
+  [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
   [Codegen] Creating component provider.
-  [Codegen] Generated provider in: /Users/kernel/Documents/RepackBareRepo/node_modules/react-native/React/Fabric
+  [Codegen] Generated provider in: /Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native/React/Fabric
   [Codegen] Done.
-[Codegen] Analyzing /Users/kernel/Documents/RepackBareRepo/packages/host/package.json
+[Codegen] Analyzing /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/package.json
 [Codegen] Searching for codegen-enabled libraries in the app.
 [Codegen] The "codegenConfig" field is not defined in package.json. Assuming there is nothing to generate at the app level.
 [Codegen] Searching for codegen-enabled libraries in the project dependencies.
@@ -59,14 +59,14 @@ Framework build type is static framework
 [Codegen] Searching for podspec in the project dependencies.
 [Codegen] Supported Apple platforms: ios for RNScriptManagerSpec
 [Codegen] Generating Native Code for FBReactNativeSpec - ios
-[Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo/packages/host/ios/build/generated/ios
+[Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
 [Codegen - rncore] Skipping iOS code generation for rncore as it has been generated already.
 [Codegen] Generating Native Code for rnasyncstorage - ios
-[Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo/packages/host/ios/build/generated/ios
+[Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
 [Codegen] Generating Native Code for RNScriptManagerSpec - ios
-[Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo/packages/host/ios/build/generated/ios
+[Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
 [Codegen] Creating component provider.
-[Codegen] Generated provider in: /Users/kernel/Documents/RepackBareRepo/node_modules/react-native/React/Fabric
+[Codegen] Generated provider in: /Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native/React/Fabric
 [Codegen] Done.
   Preparing
 
@@ -77,7 +77,6 @@ Inspecting targets to integrate
   Using `ARCHS` setting to build architectures of target `Pods-Elearning-ElearningTests`: (``)
 
 Finding Podfile changes
-  M callstack-repack
   - DoubleConversion
   - FBLazyVector
   - RCT-Folly
@@ -138,6 +137,7 @@ Finding Podfile changes
   - ReactCommon
   - Yoga
   - boost
+  - callstack-repack
   - fmt
   - glog
   - hermes-engine
@@ -210,14 +210,12 @@ Resolving dependencies of `Podfile`
   CDN: trunk Relative path: Specs/7/3/e/JWTDecode/3.2.0-beta.0/JWTDecode.podspec.json exists! Returning local because checking is only performed in repo update
   CDN: trunk Relative path: all_pods_versions_6_a_b.txt exists! Returning local because checking is only performed in repo update
   CDN: trunk Relative path: Specs/6/a/b/SwiftyRSA/1.7.0/SwiftyRSA.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/7/3/e/JWTDecode/3.0.1/JWTDecode.podspec.json exists! Returning local because checking is only performed in repo update
   CDN: trunk Relative path: Specs/a/9/3/SocketRocket/0.7.0/SocketRocket.podspec.json exists! Returning local because checking is only performed in repo update
   CDN: trunk Relative path: Specs/6/a/b/SwiftyRSA/1.7.0/SwiftyRSA.podspec.json exists! Returning local because checking is only performed in repo update
   CDN: trunk Relative path: Specs/6/a/b/SwiftyRSA/1.7.0/SwiftyRSA.podspec.json exists! Returning local because checking is only performed in repo update
-  CDN: trunk Relative path: Specs/7/3/e/JWTDecode/3.0.1/JWTDecode.podspec.json exists! Returning local because checking is only performed in repo update
-  CDN: trunk Relative path: Specs/7/3/e/JWTDecode/3.0.0/JWTDecode.podspec.json exists! Returning local because checking is only performed in repo update
 
 Comparing resolved specification to the sandbox manifest
-  M callstack-repack
   - DoubleConversion
   - FBLazyVector
   - JWTDecode
@@ -281,6 +279,7 @@ Comparing resolved specification to the sandbox manifest
   - SwiftyRSA
   - Yoga
   - boost
+  - callstack-repack
   - fmt
   - glog
   - hermes-engine
@@ -413,7 +412,7 @@ Downloading dependencies
 
 -> Using boost (1.84.0)
 
--> Installing callstack-repack 5.0.0-alpha.0 (was 4.3.3)
+-> Using callstack-repack (5.0.0-alpha.0)
 
 -> Using fmt (9.1.0)
 
@@ -769,8 +768,8 @@ Setting SWIFT_ACTIVE_COMPILATION_CONDITIONS build settings
 [SPM] Adding SPM dependencies to Pods project
 [Privacy Manifest Aggregation] Appending aggregated reasons to existing PrivacyInfo.xcprivacy file.
 [Privacy Manifest Aggregation] Reading .xcprivacy files to aggregate all used Required Reason APIs.
-Setting CLANG_CXX_LANGUAGE_STANDARD to c++20 on /Users/kernel/Documents/RepackBareRepo/packages/host/ios/Elearning.xcodeproj
-Pod install took 6 [s] to run
+Setting CLANG_CXX_LANGUAGE_STANDARD to c++20 on /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/Elearning.xcodeproj
+Pod install took 7 [s] to run
     - Podfile
   - Writing Xcode project file to `Pods/Pods.xcodeproj`
   Cleaning up sandbox directory

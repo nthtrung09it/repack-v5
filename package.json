@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start:host": "pnpm --filter host start",
+    "start:miniapp": "pnpm --filter miniapp start",
     "start:catalog": "pnpm --filter catalog-server start",
     "host": "pnpm --filter host",
     "miniapp": "pnpm --filter miniapp",

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "react-native webpack-start --port 9003",
+    "start": "react-native webpack-start --port 9003 --webpackConfig webpack.config.mjs",
     "test": "jest --passWithNoTests",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "bundle": "pnpm bundle:ios && pnpm bundle:android",

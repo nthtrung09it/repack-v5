@@ -176,7 +176,7 @@ export default env => {
               /** Add React Refresh transform only when HMR is enabled. */
               sourceMaps: true,
               env: {
-                targets: { 'react-native': '0.74' },
+                targets: { 'react-native': '0.75' },
               },
               jsc: {
                 externalHelpers: true,
@@ -259,14 +259,31 @@ export default env => {
          * React, React Native and React Navigation should be provided here because there should be only one instance of these modules.
          * Their names are used to match requested modules in this compilation.
          */
-        shared: getSharedDependencies({eager: false}),
+        shared: {
+          react: {
+            singleton: true,
+            eager: false,
+            requiredVersion: '18.3.1',
+          },
+          'react-native': {
+            singleton: true,
+            eager: false,
+            requiredVersion: '0.75.3',
+          },
+          'react-native/Libraries/Core/Devtools/getDevServer': {
+            singleton: true,
+            eager: true,
+            requiredVersion: '0.75.3',
+            shareScope: 'internal',
+          },
+        }
       }),
-      new Repack.plugins.ChunksToHermesBytecodePlugin({
-        reactNativePath: reactNativePath,
-        enabled: mode === 'production' && !devServer,
-        test: /\.(js)?bundle$/,
-        exclude: /index.bundle$/,
-      }),
+      // new Repack.plugins.ChunksToHermesBytecodePlugin({
+      //   reactNativePath: reactNativePath,
+      //   enabled: mode === 'production' && !devServer,
+      //   test: /\.(js)?bundle$/,
+      //   exclude: /index.bundle$/,
+      // }),
       process.env.RSDOCTOR && new RsdoctorRspackPlugin(),
       // new Repack.plugins.CodeSigningPlugin({
       //   enabled: mode === 'production',
