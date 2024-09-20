@@ -19,8 +19,7 @@ export default env => {
     bundleFilename = undefined,
     sourceMapFilename = undefined,
     assetsPath = undefined,
-    reactNativePath = new URL('./node_modules/react-native', import.meta.url)
-      .pathname,
+    reactNativePath = (reactNativePath = resolve('react-native')),
   } = env;
   const dirname = Repack.getDirname(import.meta.url);
 
@@ -83,9 +82,9 @@ export default env => {
        * dependency. You might need it when using workspaces/monorepos or unconventional project
        * structure. For simple/typical project you won't need it.
        */
-      conditionNames: [],
+      // conditionNames: [],
       importsFields: [],
-      exportsFields: [],
+      // exportsFields: [],
       alias: {
         'react-native': reactNativePath,
         realm$: realmPath,
@@ -150,13 +149,11 @@ export default env => {
         Repack.REACT_NATIVE_LOADING_RULES,
         Repack.NODE_MODULES_LOADING_RULES,
         {
-          test: /\.[cm]?[jt]sx?$/,
+          test: /\.jsx?$/,
           type: 'javascript/auto',
           include: [
             /node_modules[/\\]react-native-vector-icons/,
             /node_modules[/\\]react-native-fs/,
-            /node_modules(.*[/\\])+realm/,
-            /node_modules(.*[/\\])+@realm\/react/,
           ],
           use: {
             loader: '@callstack/repack/flow-loader',
@@ -186,6 +183,34 @@ export default env => {
               },
             },
           },
+        },
+        {
+          test: /\.[cm]?[jt]sx?$/,
+          include: [
+            /node_modules(.*[/\\])+redux/,
+            /node_modules(.*[/\\])+redux-thunk/,
+            /node_modules(.*[/\\])+react-redux/,
+            /node_modules(.*[/\\])+reselect/,
+            /node_modules(.*[/\\])+@reduxjs\/toolkit/,
+            /node_modules(.*[/\\])+@reduxjs(.*[/\\])+toolkit/,
+          ],
+          rules: [
+            {
+              test: /\.[cm]?[jt]sx?$/,
+              use: [
+                {
+                  loader: 'babel-loader',
+                  // options: {
+                  //   babelrc: false,
+                  //   browserslistConfigFile: false,
+                  //   configFile: false,
+                  //   compact: false,
+                  // },
+                },
+              ],
+            },
+          ],
+          type: 'javascript/auto',
         },
         Repack.REACT_NATIVE_CODEGEN_RULES,
         {

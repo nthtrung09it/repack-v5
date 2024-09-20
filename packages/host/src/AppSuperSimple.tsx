@@ -12,32 +12,48 @@ import {
   REALM_SCHEMA_VERSION,
   realmSchema,
 } from './RealmDB';
+import {Provider} from 'react-redux';
+import {store} from './store/store';
+import {useAppDispatch, useAppSelector} from './store/hook';
+import {selectSimple, setSimple} from './store/simpleSlice';
 
 const MiniAppScreen = React.lazy(() =>
   Federated.importModule('miniapp', './MiniAppScreen'),
 );
 
 export const AppSuperSimple: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const isSimple = useAppSelector(selectSimple);
+
   const [showMiniApp, setShowMiniApp] = useState(false);
 
   const path = `${RNFS.DocumentDirectoryPath}`;
   console.log('*** render splash simple RNFS: ' + path);
 
   const handleShowMiniApp = async () => {
-    const decks = await getDecks();
-    console.log('**** deck length: ' + decks.length);
+    dispatch(setSimple(true));
+    // const decks = await getDecks();
+    // console.log('**** deck length: ' + decks.length);
     setShowMiniApp(true);
   };
 
+  const simple = () => {
+    if (isSimple) {
+      return 'is Simple true';
+    } else {
+      return 'is Simple false';
+    }
+  };
   return (
     <View
       style={{
         flex: 1,
-        backgroundColor: 'green',
+        backgroundColor: 'yellow',
         alignItems: 'center',
         justifyContent: 'center',
       }}>
       <Icon name="rocket" size={30} color="#900" />
+      <Text>Is simple: [{simple()}]</Text>
       {/* <Text>This is my SplashSimple with RNFS path {path}</Text> */}
       {!showMiniApp ? (
         <Button title="Show Mini App" onPress={handleShowMiniApp} />
@@ -49,5 +65,13 @@ export const AppSuperSimple: React.FC = () => {
         </View>
       )}
     </View>
+  );
+};
+
+export const App = () => {
+  return (
+    <Provider store={store}>
+      <AppSuperSimple />
+    </Provider>
   );
 };
