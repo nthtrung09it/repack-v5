@@ -87,7 +87,7 @@ export default env => {
       // exportsFields: [],
       alias: {
         'react-native': reactNativePath,
-        realm$: realmPath,
+        // realm$: realmPath,
       },
     },
 
@@ -187,6 +187,9 @@ export default env => {
         {
           test: /\.[cm]?[jt]sx?$/,
           include: [
+            /node_modules(.*[/\\])+realm/,
+            /node_modules(.*[/\\])+@realm\/react/,
+            // Make redux work
             /node_modules(.*[/\\])+redux/,
             /node_modules(.*[/\\])+redux-thunk/,
             /node_modules(.*[/\\])+react-redux/,
