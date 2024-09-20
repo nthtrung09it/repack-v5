@@ -17,5 +17,10 @@
   },
   "devDependencies": {
     "concurrently": "^7.6.0"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "realm": "patches/realm.patch"
+    }
   }
 }

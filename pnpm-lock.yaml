@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  realm:
+    hash: 6mifgokv23doizplpckgkmdv2i
+    path: patches/realm.patch
+
 importers:
 
   .:
@@ -31,7 +36,7 @@ importers:
         version: 2.0.0(react-native@0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.5)(react@18.3.1)(typescript@5.6.2))
       '@realm/react':
         specifier: ^0.10.1
-        version: 0.10.1(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.5)(react@18.3.1)(realm@20.0.0(react-native@0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.5)(react@18.3.1)(typescript@5.6.2)))(typescript@5.6.2)
+        version: 0.10.1(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.5)(react@18.3.1)(realm@20.0.0(patch_hash=6mifgokv23doizplpckgkmdv2i)(react-native@0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.5)(react@18.3.1)(typescript@5.6.2)))(typescript@5.6.2)
       '@reduxjs/toolkit':
         specifier: ^2.2.7
         version: 2.2.7(react-redux@9.1.2(@types/react@18.3.5)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -61,7 +66,7 @@ importers:
         version: 9.1.2(@types/react@18.3.5)(react@18.3.1)(redux@5.0.1)
       realm:
         specifier: ^20.0.0
-        version: 20.0.0(react-native@0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.5)(react@18.3.1)(typescript@5.6.2))
+        version: 20.0.0(patch_hash=6mifgokv23doizplpckgkmdv2i)(react-native@0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.5)(react@18.3.1)(typescript@5.6.2))
     devDependencies:
       '@babel/core':
         specifier: ^7.20.0
@@ -7405,9 +7410,7 @@ snapshots:
     transitivePeerDependencies:
       - '@babel/core'
       - '@babel/preset-env'
-      - bufferutil
       - supports-color
-      - utf-8-validate
 
   '@react-native/normalize-colors@0.75.3': {}
 
@@ -7424,11 +7427,11 @@ snapshots:
 
   '@realm/fetch@0.1.1': {}
 
-  '@realm/react@0.10.1(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.5)(react@18.3.1)(realm@20.0.0(react-native@0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.5)(react@18.3.1)(typescript@5.6.2)))(typescript@5.6.2)':
+  '@realm/react@0.10.1(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.5)(react@18.3.1)(realm@20.0.0(patch_hash=6mifgokv23doizplpckgkmdv2i)(react-native@0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.5)(react@18.3.1)(typescript@5.6.2)))(typescript@5.6.2)':
     dependencies:
       lodash.isequal: 4.5.0
       react: 18.3.1
-      realm: 20.0.0(react-native@0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.5)(react@18.3.1)(typescript@5.6.2))
+      realm: 20.0.0(patch_hash=6mifgokv23doizplpckgkmdv2i)(react-native@0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.5)(react@18.3.1)(typescript@5.6.2))
     optionalDependencies:
       '@babel/runtime': 7.25.6
       react-native: 0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.5)(react@18.3.1)(typescript@5.6.2)
@@ -11672,7 +11675,7 @@ snapshots:
 
   real-require@0.2.0: {}
 
-  realm@20.0.0(react-native@0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.5)(react@18.3.1)(typescript@5.6.2)):
+  realm@20.0.0(patch_hash=6mifgokv23doizplpckgkmdv2i)(react-native@0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.5)(react@18.3.1)(typescript@5.6.2)):
     dependencies:
       '@realm/fetch': 0.1.1
       bson: 4.7.2
