@@ -87,7 +87,7 @@ export default env => {
       exportsFields: [],
       alias: {
         'react-native': reactNativePath,
-        // realm$: realmPath,
+        realm$: realmPath,
       },
     },
 
