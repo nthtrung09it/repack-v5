@@ -196,6 +196,10 @@ export default env => {
             /node_modules(.*[/\\])+reselect/,
             /node_modules(.*[/\\])+@reduxjs\/toolkit/,
             /node_modules(.*[/\\])+@reduxjs(.*[/\\])+toolkit/,
+            // Make sheet
+            /node_modules(.*[/\\])+@gorhom/,
+            /node_modules(.*[/\\])+react-native-gesture-handler/,
+            /node_modules(.*[/\\])+react-native-safe-area-context/,
           ],
           rules: [
             {

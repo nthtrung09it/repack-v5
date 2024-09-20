@@ -1,8 +1,8 @@
   $ /Users/kernel/.nvm/versions/node/v20.16.0/bin/node -p require.resolve(     "react-native/scripts/react_native_pods.rb",     {paths: [process.argv[1]]},   ) /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios
   /Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native/scripts/react_native_pods.rb
-Found 5 modules for target `Elearning`
-link_native_modules! {:ios_packages=>[{:configurations=>[], :name=>"@react-native-async-storage/async-storage", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@react-native-async-storage/async-storage", :path=>"../../../node_modules/@react-native-async-storage/async-storage", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@react-native-async-storage/async-storage/RNCAsyncStorage.podspec", :script_phases=>[]}, {:configurations=>[], :name=>"react-native-fs", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native-fs", :path=>"../../../node_modules/react-native-fs", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native-fs/RNFS.podspec", :script_phases=>[]}, {:configurations=>[], :name=>"react-native-vector-icons", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native-vector-icons", :path=>"../../../node_modules/react-native-vector-icons", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native-vector-icons/RNVectorIcons.podspec", :script_phases=>[]}, {:configurations=>[], :name=>"realm", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/realm", :path=>"../../../node_modules/realm", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/realm/RealmJS.podspec", :script_phases=>[]}, {:configurations=>[], :name=>"@callstack/repack", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@callstack/repack", :path=>"../../../node_modules/@callstack/repack", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@callstack/repack/callstack-repack.podspec", :script_phases=>[]}], :ios_project_root_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios", :react_native_path=>"../../../node_modules/react-native"}
-Auto-linking React Native modules for target `Elearning`: RNCAsyncStorage, RNFS, RNVectorIcons, RealmJS, and callstack-repack
+Found 7 modules for target `Elearning`
+link_native_modules! {:ios_packages=>[{:configurations=>[], :name=>"@react-native-async-storage/async-storage", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@react-native-async-storage/async-storage", :path=>"../../../node_modules/@react-native-async-storage/async-storage", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@react-native-async-storage/async-storage/RNCAsyncStorage.podspec", :script_phases=>[]}, {:configurations=>[], :name=>"react-native-fs", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native-fs", :path=>"../../../node_modules/react-native-fs", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native-fs/RNFS.podspec", :script_phases=>[]}, {:configurations=>[], :name=>"react-native-gesture-handler", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native-gesture-handler", :path=>"../../../node_modules/react-native-gesture-handler", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native-gesture-handler/RNGestureHandler.podspec", :script_phases=>[]}, {:configurations=>[], :name=>"react-native-reanimated", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native-reanimated", :path=>"../../../node_modules/react-native-reanimated", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native-reanimated/RNReanimated.podspec", :script_phases=>[]}, {:configurations=>[], :name=>"react-native-vector-icons", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native-vector-icons", :path=>"../../../node_modules/react-native-vector-icons", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/react-native-vector-icons/RNVectorIcons.podspec", :script_phases=>[]}, {:configurations=>[], :name=>"realm", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/realm", :path=>"../../../node_modules/realm", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/realm/RealmJS.podspec", :script_phases=>[]}, {:configurations=>[], :name=>"@callstack/repack", :root=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@callstack/repack", :path=>"../../../node_modules/@callstack/repack", :podspec_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/node_modules/@callstack/repack/callstack-repack.podspec", :script_phases=>[]}], :ios_project_root_path=>"/Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios", :react_native_path=>"../../../node_modules/react-native"}
+Auto-linking React Native modules for target `Elearning`: RNCAsyncStorage, RNFS, RNGestureHandler, RNReanimated, RNVectorIcons, RealmJS, and callstack-repack
 Framework build type is static framework
 [Codegen] Adding script_phases to ReactCodegen.
   $ /bin/mkdir -p ./build/generated/ios
@@ -14,6 +14,8 @@ Framework build type is static framework
   [Codegen] Searching for codegen-enabled libraries in the project dependencies.
   [Codegen] Found @react-native-async-storage/async-storage
   [Codegen] Found react-native
+  [Codegen] Found react-native-gesture-handler
+  [Codegen] Found react-native-reanimated
   [Codegen] Found react-native-vector-icons
   [Codegen] Found @callstack/repack
   
@@ -26,6 +28,12 @@ Framework build type is static framework
   [Codegen] Searching for podspec in the project dependencies.
   [Codegen] Processing rncore
   [Codegen] Searching for podspec in the project dependencies.
+  [Codegen] Processing rngesturehandler_codegen
+  [Codegen] Searching for podspec in the project dependencies.
+  [Codegen] Supported Apple platforms: ios, macos, tvos, visionos for rngesturehandler_codegen
+  [Codegen] Processing rnreanimated
+  [Codegen] Searching for podspec in the project dependencies.
+  [Codegen] Supported Apple platforms: ios, macos, tvos, visionos for rnreanimated
   [Codegen] Processing RNVectorIconsSpec
   [Codegen] Searching for podspec in the project dependencies.
   [Codegen] Supported Apple platforms: ios, tvos, visionos for RNVectorIconsSpec
@@ -37,6 +45,10 @@ Framework build type is static framework
   [Codegen] Generating Native Code for FBReactNativeSpec - ios
   [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
   [Codegen - rncore] Skipping iOS code generation for rncore as it has been generated already.
+  [Codegen] Generating Native Code for rngesturehandler_codegen - ios
+  [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
+  [Codegen] Generating Native Code for rnreanimated - ios
+  [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
   [Codegen] Generating Native Code for RNVectorIconsSpec - ios
   [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
   [Codegen] Generating Native Code for RNScriptManagerSpec - ios
@@ -50,6 +62,8 @@ Framework build type is static framework
 [Codegen] Searching for codegen-enabled libraries in the project dependencies.
 [Codegen] Found @react-native-async-storage/async-storage
 [Codegen] Found react-native
+[Codegen] Found react-native-gesture-handler
+[Codegen] Found react-native-reanimated
 [Codegen] Found react-native-vector-icons
 [Codegen] Found @callstack/repack
 
@@ -62,6 +76,12 @@ Framework build type is static framework
 [Codegen] Searching for podspec in the project dependencies.
 [Codegen] Processing rncore
 [Codegen] Searching for podspec in the project dependencies.
+[Codegen] Processing rngesturehandler_codegen
+[Codegen] Searching for podspec in the project dependencies.
+[Codegen] Supported Apple platforms: ios, macos, tvos, visionos for rngesturehandler_codegen
+[Codegen] Processing rnreanimated
+[Codegen] Searching for podspec in the project dependencies.
+[Codegen] Supported Apple platforms: ios, macos, tvos, visionos for rnreanimated
 [Codegen] Processing RNVectorIconsSpec
 [Codegen] Searching for podspec in the project dependencies.
 [Codegen] Supported Apple platforms: ios, tvos, visionos for RNVectorIconsSpec
@@ -73,6 +93,10 @@ Framework build type is static framework
 [Codegen] Generating Native Code for FBReactNativeSpec - ios
 [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
 [Codegen - rncore] Skipping iOS code generation for rncore as it has been generated already.
+[Codegen] Generating Native Code for rngesturehandler_codegen - ios
+[Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
+[Codegen] Generating Native Code for rnreanimated - ios
+[Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
 [Codegen] Generating Native Code for RNVectorIconsSpec - ios
 [Codegen] Generated artifacts: /Users/kernel/Documents/RepackBareRepo_Issue/packages/host/ios/build/generated/ios
 [Codegen] Generating Native Code for RNScriptManagerSpec - ios
@@ -89,7 +113,8 @@ Inspecting targets to integrate
   Using `ARCHS` setting to build architectures of target `Pods-Elearning-ElearningTests`: (``)
 
 Finding Podfile changes
-  A RealmJS
+  A RNGestureHandler
+  A RNReanimated
   - DoubleConversion
   - FBLazyVector
   - RCT-Folly
@@ -150,6 +175,7 @@ Finding Podfile changes
   - React-utils
   - ReactCodegen
   - ReactCommon
+  - RealmJS
   - Yoga
   - boost
   - callstack-repack
@@ -164,6 +190,8 @@ Fetching external sources
 -> Fetching podspec for `RCTTypeSafety` from `../../../node_modules/react-native/Libraries/TypeSafety`
 -> Fetching podspec for `RNCAsyncStorage` from `../../../node_modules/@react-native-async-storage/async-storage`
 -> Fetching podspec for `RNFS` from `../../../node_modules/react-native-fs`
+-> Fetching podspec for `RNGestureHandler` from `../../../node_modules/react-native-gesture-handler`
+-> Fetching podspec for `RNReanimated` from `../../../node_modules/react-native-reanimated`
 -> Fetching podspec for `RNVectorIcons` from `../../../node_modules/react-native-vector-icons`
 -> Fetching podspec for `React` from `../../../node_modules/react-native/`
 -> Fetching podspec for `React-Core` from `../../../node_modules/react-native/`
@@ -222,19 +250,20 @@ Fetching external sources
 
 Resolving dependencies of `Podfile`
   CDN: trunk Relative path: CocoaPods-version.yml exists! Returning local because checking is only performed in repo update
-  CDN: trunk Relative path: all_pods_versions_a_9_3.txt exists! Returning local because checking is only performed in repo update
-  CDN: trunk Relative path: Specs/a/9/3/SocketRocket/0.7.1/SocketRocket.podspec.json exists! Returning local because checking is only performed in repo update
   CDN: trunk Relative path: all_pods_versions_7_3_e.txt exists! Returning local because checking is only performed in repo update
   CDN: trunk Relative path: Specs/7/3/e/JWTDecode/3.2.0/JWTDecode.podspec.json exists! Returning local because checking is only performed in repo update
   CDN: trunk Relative path: all_pods_versions_6_a_b.txt exists! Returning local because checking is only performed in repo update
   CDN: trunk Relative path: Specs/6/a/b/SwiftyRSA/1.7.0/SwiftyRSA.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: all_pods_versions_a_9_3.txt exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/a/9/3/SocketRocket/0.7.1/SocketRocket.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/6/a/b/SwiftyRSA/1.7.0/SwiftyRSA.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/6/a/b/SwiftyRSA/1.7.0/SwiftyRSA.podspec.json exists! Returning local because checking is only performed in repo update
   CDN: trunk Relative path: Specs/7/3/e/JWTDecode/3.0.1/JWTDecode.podspec.json exists! Returning local because checking is only performed in repo update
   CDN: trunk Relative path: Specs/a/9/3/SocketRocket/0.7.0/SocketRocket.podspec.json exists! Returning local because checking is only performed in repo update
-  CDN: trunk Relative path: Specs/6/a/b/SwiftyRSA/1.7.0/SwiftyRSA.podspec.json exists! Returning local because checking is only performed in repo update
-  CDN: trunk Relative path: Specs/6/a/b/SwiftyRSA/1.7.0/SwiftyRSA.podspec.json exists! Returning local because checking is only performed in repo update
 
 Comparing resolved specification to the sandbox manifest
-  A RealmJS
+  A RNGestureHandler
+  A RNReanimated
   - DoubleConversion
   - FBLazyVector
   - JWTDecode
@@ -296,6 +325,7 @@ Comparing resolved specification to the sandbox manifest
   - React-utils
   - ReactCodegen
   - ReactCommon
+  - RealmJS
   - SocketRocket
   - SwiftyRSA
   - Yoga
@@ -324,6 +354,10 @@ Downloading dependencies
 -> Using RNCAsyncStorage (2.0.0)
 
 -> Using RNFS (2.20.0)
+
+-> Installing RNGestureHandler (2.19.0)
+
+-> Installing RNReanimated (3.15.2)
 
 -> Using RNVectorIcons (10.2.0)
 
@@ -429,7 +463,7 @@ Downloading dependencies
 
 -> Using ReactCommon (0.75.3)
 
--> Installing RealmJS (20.0.0)
+-> Using RealmJS (20.0.0)
 
 -> Using SocketRocket (0.7.0)
 
@@ -498,6 +532,16 @@ Generating Pods project
       - Generating umbrella header at `Pods/Target Support Files/RNFS/RNFS-umbrella.h`
       - Generating Info.plist file at `Pods/Target Support Files/RNFS/RNFS-Info.plist`
       - Generating dummy source at `Pods/Target Support Files/RNFS/RNFS-dummy.m`
+    - Installing target `RNGestureHandler` iOS 11.0
+      - Generating module map file at `Pods/Target Support Files/RNGestureHandler/RNGestureHandler.modulemap`
+      - Generating umbrella header at `Pods/Target Support Files/RNGestureHandler/RNGestureHandler-umbrella.h`
+      - Generating Info.plist file at `Pods/Target Support Files/RNGestureHandler/RNGestureHandler-Info.plist`
+      - Generating dummy source at `Pods/Target Support Files/RNGestureHandler/RNGestureHandler-dummy.m`
+    - Installing target `RNReanimated` iOS 13.4
+      - Generating module map file at `Pods/Target Support Files/RNReanimated/RNReanimated.modulemap`
+      - Generating umbrella header at `Pods/Target Support Files/RNReanimated/RNReanimated-umbrella.h`
+      - Generating Info.plist file at `Pods/Target Support Files/RNReanimated/RNReanimated-Info.plist`
+      - Generating dummy source at `Pods/Target Support Files/RNReanimated/RNReanimated-dummy.m`
     - Installing target `RNVectorIcons` iOS 12.0
       - Generating module map file at `Pods/Target Support Files/RNVectorIcons/RNVectorIcons.modulemap`
       - Generating umbrella header at `Pods/Target Support Files/RNVectorIcons/RNVectorIcons-umbrella.h`
@@ -830,4 +874,4 @@ Integrating target `Pods-Elearning-ElearningTests` (`Elearning.xcodeproj` projec
   - Writing Manifest in `Pods/Manifest.lock`
   CDN: trunk Relative path: CocoaPods-version.yml exists! Returning local because checking is only performed in repo update
 
--> Pod installation complete! There are 69 dependencies from the Podfile and 70 total pods installed.
+-> Pod installation complete! There are 71 dependencies from the Podfile and 72 total pods installed.
