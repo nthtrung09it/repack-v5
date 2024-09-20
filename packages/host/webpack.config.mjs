@@ -82,9 +82,9 @@ export default env => {
        * dependency. You might need it when using workspaces/monorepos or unconventional project
        * structure. For simple/typical project you won't need it.
        */
-      // conditionNames: [],
+      conditionNames: [],
       importsFields: [],
-      // exportsFields: [],
+      exportsFields: [],
       alias: {
         'react-native': reactNativePath,
         // realm$: realmPath,
@@ -196,10 +196,11 @@ export default env => {
             /node_modules(.*[/\\])+reselect/,
             /node_modules(.*[/\\])+@reduxjs\/toolkit/,
             /node_modules(.*[/\\])+@reduxjs(.*[/\\])+toolkit/,
-            // Make sheet
+            // Make bottom sheet work?
             /node_modules(.*[/\\])+@gorhom/,
             /node_modules(.*[/\\])+react-native-gesture-handler/,
             /node_modules(.*[/\\])+react-native-safe-area-context/,
+            /node_modules(.*[/\\])+react-native-reanimated/,
           ],
           rules: [
             {
@@ -207,12 +208,6 @@ export default env => {
               use: [
                 {
                   loader: 'babel-loader',
-                  // options: {
-                  //   babelrc: false,
-                  //   browserslistConfigFile: false,
-                  //   configFile: false,
-                  //   compact: false,
-                  // },
                 },
               ],
             },

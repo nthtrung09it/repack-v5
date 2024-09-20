@@ -10,5 +10,9 @@
   "react-native-gesture-handler": {
     "name": "react-native-gesture-handler",
     "version": "^2.19.0"
+  },
+  "react-native-reanimated": {
+    "name": "react-native-reanimated",
+    "version": "^3.15.2"
   }
 }

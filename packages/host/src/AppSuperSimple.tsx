@@ -17,6 +17,10 @@ import SplashScreen from './SplashScreen';
 import {store} from './store/store';
 import {useAppDispatch, useAppSelector} from './store/hook';
 import {selectSimple, setSimple} from './store/simpleSlice';
+import {
+  DeckMoreActionSheetHandle,
+  DeckMoreActionsSheet,
+} from './delete-deck-sheet';
 
 const MiniAppScreen = React.lazy(() =>
   Federated.importModule('miniapp', './MiniAppScreen'),
@@ -25,6 +29,7 @@ const MiniAppScreen = React.lazy(() =>
 export const AppSuperSimple: React.FC = () => {
   const dispatch = useAppDispatch();
   const isSimple = useAppSelector(selectSimple);
+  const deckMoreActionSheetSheetRef = useRef<DeckMoreActionSheetHandle>(null);
 
   const [showMiniApp, setShowMiniApp] = useState(false);
 
@@ -72,7 +77,10 @@ export const AppSuperSimple: React.FC = () => {
     }
   };
 
-  const showBottomSheet = useCallback(() => {}, []);
+  const showBottomSheet = useCallback(() => {
+    deckMoreActionSheetSheetRef.current?.present();
+  }, []);
+
   return (
     <RealmProvider schema={realmSchema} schemaVersion={REALM_SCHEMA_VERSION}>
       <View
@@ -95,14 +103,10 @@ export const AppSuperSimple: React.FC = () => {
             </React.Suspense>
           </View>
         )}
-        <View>
-          <BottomSheet ref={bottomSheetRef} onChange={handleSheetChanges}>
-            <View></View>
-            <BottomSheetView style={styles.contentContainer}>
-              <Text>Awesome 🎉</Text>
-            </BottomSheetView>
-          </BottomSheet>
-        </View>
+        <DeckMoreActionsSheet
+          ref={deckMoreActionSheetSheetRef}
+          onTypeSelected={() => {}}
+        />
       </View>
     </RealmProvider>
   );
