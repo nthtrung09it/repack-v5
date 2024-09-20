@@ -1,8 +1,12 @@
 import path from 'path';
-import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin';
+import {RsdoctorRspackPlugin} from '@rsdoctor/rspack-plugin';
 import * as Repack from '@callstack/repack';
 import rspack from '@rspack/core';
 import {getSharedDependencies} from 'kernel-sdk';
+import {createRequire} from 'module';
+
+const require = createRequire(import.meta.url);
+const resolve = require.resolve;
 
 export default env => {
   const {
@@ -74,9 +78,16 @@ export default env => {
        * dependency. You might need it when using workspaces/monorepos or unconventional project
        * structure. For simple/typical project you won't need it.
        */
+      conditionNames: [],
+      importsFields: [],
+      exportsFields: [],
       alias: {
         'react-native': reactNativePath,
-      }
+        // realm$: path.join(
+        //   path.dirname(resolve('realm/package.json')),
+        //   'dist/platform/react-native/index.js',
+        // ),
+      },
     },
 
     /**
@@ -139,27 +150,27 @@ export default env => {
         {
           test: /\.[jt]sx?$/,
           type: 'javascript/auto',
-          include: [/repack[/\\]dist/],
+          include: [
+            /node_modules[/\\]react-native-vector-icons/,
+            /node_modules[/\\]react-native-fs/,
+          ],
           use: {
-            loader: 'builtin:swc-loader',
-            options: {
-              env: { targets: { 'react-native': '0.75' } },
-              jsc: { externalHelpers: true },
-            },
+            loader: '@callstack/repack/flow-loader',
+            options: {all: true},
           },
         },
         /* codebase rules */
         {
           test: /\.[jt]sx?$/,
           type: 'javascript/auto',
-          exclude: [/node_modules/, /repack[/\\]dist/],
+          exclude: [/node_modules/],
           use: {
             loader: 'builtin:swc-loader',
             options: {
               /** @type {import('@rspack/core').SwcLoaderOptions} */
               sourceMaps: true,
               env: {
-                targets: { 'react-native': '0.75' },
+                targets: {'react-native': '0.75'},
               },
               jsc: {
                 externalHelpers: true,
@@ -186,7 +197,7 @@ export default env => {
       ],
     },
     plugins: [
-      new rspack.IgnorePlugin({ resourceRegExp: /@react-native-masked-view/ }),
+      new rspack.IgnorePlugin({resourceRegExp: /@react-native-masked-view/}),
       new Repack.RepackPlugin({
         context,
         mode,
@@ -213,7 +224,7 @@ export default env => {
          */
         shared: getSharedDependencies({eager: true}),
       }),
-      new rspack.EnvironmentPlugin({ MF_CACHE: null }),
+      new rspack.EnvironmentPlugin({MF_CACHE: null}),
       process.env.RSDOCTOR && new RsdoctorRspackPlugin(),
     ].filter(Boolean),
   };

@@ -6,7 +6,7 @@ import RNFS from 'react-native-fs';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {RealmProvider} from '@realm/react';
-import {REALM_SCHEMA_VERSION, realmSchema} from './RealmDB';
+import {openRealm, REALM_SCHEMA_VERSION, realmSchema} from './RealmDB';
 
 const MiniAppScreen = React.lazy(() =>
   Federated.importModule('miniapp', './MiniAppScreen'),
@@ -16,14 +16,15 @@ export const AppSuperSimple: React.FC = () => {
   const [showMiniApp, setShowMiniApp] = useState(false);
 
   const path = `${RNFS.DocumentDirectoryPath}`;
-  console.log('*** render splash simple');
+  console.log('*** render splash simple RNFS: ' + path);
 
   const handleShowMiniApp = () => {
+    openRealm();
     setShowMiniApp(true);
   };
 
   return (
-    <RealmProvider schema={realmSchema} schemaVersion={REALM_SCHEMA_VERSION}>
+    // <RealmProvider schema={realmSchema} schemaVersion={REALM_SCHEMA_VERSION}>
       <View
         style={{
           flex: 1,
@@ -32,7 +33,7 @@ export const AppSuperSimple: React.FC = () => {
           justifyContent: 'center',
         }}>
         <Icon name="rocket" size={30} color="#900" />
-        <Text>This is my SplashSimple with RNFS path {path}</Text>
+        {/* <Text>This is my SplashSimple with RNFS path {path}</Text> */}
         {!showMiniApp ? (
           <Button title="Show Mini App" onPress={handleShowMiniApp} />
         ) : (
@@ -43,6 +44,6 @@ export const AppSuperSimple: React.FC = () => {
           </View>
         )}
       </View>
-    </RealmProvider>
+    // </RealmProvider>
   );
 };
