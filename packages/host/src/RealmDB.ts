@@ -16,3 +16,8 @@ export const openRealm = async (): Promise<Realm> => {
   });
   return realmInstance;
 };
+
+export const getDecks = async () => {
+  const realm = await openRealm();
+  return realm.objects<DeckRealm>(DeckRealm.schema.name);
+};

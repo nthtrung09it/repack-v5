@@ -51,6 +51,11 @@ export default env => {
    */
   // process.env.BABEL_ENV = mode;
 
+  const realmPath = path.join(
+    path.dirname(resolve('realm/package.json')),
+    'dist/platform/react-native/index.js',
+  );
+
   return {
     mode,
     /**
@@ -83,10 +88,7 @@ export default env => {
       exportsFields: [],
       alias: {
         'react-native': reactNativePath,
-        // realm$: path.join(
-        //   path.dirname(resolve('realm/package.json')),
-        //   'dist/platform/react-native/index.js',
-        // ),
+        realm$: realmPath,
       },
     },
 
@@ -148,11 +150,13 @@ export default env => {
         Repack.REACT_NATIVE_LOADING_RULES,
         Repack.NODE_MODULES_LOADING_RULES,
         {
-          test: /\.[jt]sx?$/,
+          test: /\.[cm]?[jt]sx?$/,
           type: 'javascript/auto',
           include: [
             /node_modules[/\\]react-native-vector-icons/,
             /node_modules[/\\]react-native-fs/,
+            /node_modules(.*[/\\])+realm/,
+            /node_modules(.*[/\\])+@realm\/react/,
           ],
           use: {
             loader: '@callstack/repack/flow-loader',

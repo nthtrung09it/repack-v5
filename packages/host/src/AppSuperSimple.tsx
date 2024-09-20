@@ -6,7 +6,12 @@ import RNFS from 'react-native-fs';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {RealmProvider} from '@realm/react';
-import {openRealm, REALM_SCHEMA_VERSION, realmSchema} from './RealmDB';
+import {
+  getDecks,
+  openRealm,
+  REALM_SCHEMA_VERSION,
+  realmSchema,
+} from './RealmDB';
 
 const MiniAppScreen = React.lazy(() =>
   Federated.importModule('miniapp', './MiniAppScreen'),
@@ -18,32 +23,31 @@ export const AppSuperSimple: React.FC = () => {
   const path = `${RNFS.DocumentDirectoryPath}`;
   console.log('*** render splash simple RNFS: ' + path);
 
-  const handleShowMiniApp = () => {
-    openRealm();
+  const handleShowMiniApp = async () => {
+    const decks = await getDecks();
+    console.log('**** deck length: ' + decks.length);
     setShowMiniApp(true);
   };
 
   return (
-    // <RealmProvider schema={realmSchema} schemaVersion={REALM_SCHEMA_VERSION}>
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: 'green',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-        <Icon name="rocket" size={30} color="#900" />
-        {/* <Text>This is my SplashSimple with RNFS path {path}</Text> */}
-        {!showMiniApp ? (
-          <Button title="Show Mini App" onPress={handleShowMiniApp} />
-        ) : (
-          <View style={{width: 300, height: 250}}>
-            <React.Suspense fallback={<SplashScreen />}>
-              <MiniAppScreen />
-            </React.Suspense>
-          </View>
-        )}
-      </View>
-    // </RealmProvider>
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: 'green',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+      <Icon name="rocket" size={30} color="#900" />
+      {/* <Text>This is my SplashSimple with RNFS path {path}</Text> */}
+      {!showMiniApp ? (
+        <Button title="Show Mini App" onPress={handleShowMiniApp} />
+      ) : (
+        <View style={{width: 300, height: 250}}>
+          <React.Suspense fallback={<SplashScreen />}>
+            <MiniAppScreen />
+          </React.Suspense>
+        </View>
+      )}
+    </View>
   );
 };
