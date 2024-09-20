@@ -26,7 +26,6 @@
     "react-native": "0.75.3",
     "react-native-fs": "^2.20.0",
     "react-native-gesture-handler": "^2.19.0",
-    "react-native-reanimated": "^3.15.2",
     "react-native-vector-icons": "^10.1.0",
     "react-redux": "^9.1.2",
     "realm": "^20.0.0"

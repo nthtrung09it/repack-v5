@@ -20,7 +20,8 @@
   },
   "pnpm": {
     "patchedDependencies": {
-      "realm": "patches/realm.patch"
+      "realm": "patches/realm.patch",
+      "react-native-reanimated": "patches/react-native-reanimated.patch"
     }
   }
 }
